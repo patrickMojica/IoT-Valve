@@ -1,0 +1,25 @@
+/ {
+    // Define aliases for easier reference
+    aliases {
+        button1 = &button0;
+        led0 = &led0;
+    };
+
+    // Configure Button 1 (P0.11 on nRF52840 DK)
+    buttons {
+        compatible = "gpio-keys";
+        button0: button_0 {
+            gpios = <&gpio0 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+            label = "Button 1";
+        };
+    };
+
+    // Configure GPIO P0.27 as an output
+    leds {
+        compatible = "gpio-leds";
+        led0: led_0 {
+            gpios = <&gpio0 16 GPIO_ACTIVE_HIGH>;
+            label = "LED 0";
+        };
+    };
+};

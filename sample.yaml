@@ -1,0 +1,14 @@
+sample:
+  name: Relay-Valve Sample
+tests:
+  sample.basic.blinky:
+    tags:
+      - LED
+      - gpio
+      - button
+    filter: dt_enabled_alias_with_parent_compat("led0", "gpio-leds")
+    depends_on: gpio
+    harness: led
+    integration_platforms:
+      - frdm_k64f
+      - nrf52840dk/nrf52840
